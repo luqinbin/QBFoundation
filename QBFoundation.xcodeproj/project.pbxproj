@@ -741,7 +741,7 @@
 				DEVELOPMENT_TEAM = ER283WPG8S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/QBFoundation/QBFoundation-prefix.pch";
 				INFOPLIST_FILE = QBFoundation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -760,7 +760,7 @@
 				DEVELOPMENT_TEAM = ER283WPG8S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/QBFoundation/QBFoundation-prefix.pch";
 				INFOPLIST_FILE = QBFoundation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
