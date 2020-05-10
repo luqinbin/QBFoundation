@@ -1,0 +1,20 @@
+//
+//  NSURL+QBExtension.h
+//  QBFoundation
+//
+//  Created by 覃斌 卢    on 2020/5/10.
+//  Copyright © 2020 覃斌 卢   . All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface NSURL (QBExtension)
+
+#pragma mark - QueryDictionary
+- (nullable NSDictionary *)qbQueryDictionary;
+
+@end
+
+NS_ASSUME_NONNULL_END

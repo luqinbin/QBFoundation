@@ -1,0 +1,27 @@
+//
+//  QBFoundation-prefix.pch
+//  QBFoundation
+//
+//  Created by 覃斌 卢    on 2020/5/9.
+//  Copyright © 2020 覃斌 卢   . All rights reserved.
+//
+
+#ifndef QBFoundation_prefix_pch
+#define QBFoundation_prefix_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#endif /* QBFoundation_prefix_pch */
