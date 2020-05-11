@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define QBResponder(action_protocol) ((id<action_protocol>)[self responderTargetWithProtocol:@protocol(action_protocol)])
+#define QBResponder(action_protocol) ((id<action_protocol>)[self qbResponderTargetWithProtocol:@protocol(action_protocol)])
 
 @interface UIView (QBExtension)
 
