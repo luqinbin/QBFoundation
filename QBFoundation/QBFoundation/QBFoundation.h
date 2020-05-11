@@ -18,7 +18,7 @@
 #import <QBFoundation/QBUtilities.h>
 #import <QBFoundation/Foundation.h>
 #import <QBFoundation/QBUI.h>
-//#import <QBFoundation/QBQuartzCore.h>
+#import <QBFoundation/QBQuartzCore.h>
 
 
 #else
@@ -28,7 +28,7 @@
 #import "QBUtilities.h"
 #import "Foundation.h"
 #import "QBUI.h"
-//#import "QBQuartzCore.h"
+#import "QBQuartzCore.h"
 
 #endif
 

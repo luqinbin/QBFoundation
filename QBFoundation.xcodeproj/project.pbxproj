@@ -112,6 +112,7 @@
 		8E383EA4246054AC00D58AA9 /* UIColor+QBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QBExtension.m"; sourceTree = "<group>"; };
 		8E383EA62462572D00D58AA9 /* NSObject+QBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+QBExtension.h"; sourceTree = "<group>"; };
 		8E383EA72462572D00D58AA9 /* NSObject+QBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+QBExtension.m"; sourceTree = "<group>"; };
+		8E7EE1E62469399F002ED420 /* QBQuartzCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBQuartzCore.h; sourceTree = "<group>"; };
 		8E9E9D432464619600A54A0D /* QBRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBRuntime.h; sourceTree = "<group>"; };
 		8E9E9D442464619600A54A0D /* QBRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QBRuntime.m; sourceTree = "<group>"; };
 		8EDEA1152466F1D30094F01C /* NSArray+QBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+QBExtension.h"; sourceTree = "<group>"; };
@@ -378,6 +379,7 @@
 		8EDEA1462467D7CA0094F01C /* QuartzCore */ = {
 			isa = PBXGroup;
 			children = (
+				8E7EE1E62469399F002ED420 /* QBQuartzCore.h */,
 				8E383EA02460494900D58AA9 /* QBGraphicsUtilities.h */,
 				8E383EA12460494900D58AA9 /* QBGraphicsUtilities.m */,
 				8EDEA1492467D9DD0094F01C /* CALayer+QBExtension.h */,
