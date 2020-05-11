@@ -28,6 +28,14 @@
     
     [view qbSetGradientBackgroundWithColors:@[UIColor.cyanColor, UIColor.yellowColor] locations:@[@(0), @(1)] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 1)];
     [view.layer qbSetShadowPathWithColor:UIColor.redColor shadowOpacity:1 shadowRadius:15 shadowSide:QBShadowPathBottom shadowPathWidth:5];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 300, 50, 50);
+    [button setBackgroundColor:UIColor.grayColor];
+    [self.view addSubview:button];
+    [button qbAddClickBlock:^{
+        NSLog(@"hhhhhaaa");
+    }];
 }
 
 

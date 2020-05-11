@@ -71,7 +71,7 @@ QBExchangeImplementationsInTwoClasses(Class _fromClass, SEL _originSelector, Cla
 
 /// 交换同一个 class 里的 originSelector 和 newSelector 的实现，如果原本不存在 originSelector，则相当于给 class 新增一个叫做 originSelector 的方法
 CG_INLINE BOOL
-ExchangeImplementations(Class _class, SEL _originSelector, SEL _newSelector) {
+QBExchangeImplementations(Class _class, SEL _originSelector, SEL _newSelector) {
     return QBExchangeImplementationsInTwoClasses(_class, _originSelector, _class, _newSelector);
 }
 

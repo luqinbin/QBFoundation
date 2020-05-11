@@ -20,24 +20,19 @@ static char * const qbEventUnavailableKey = "eventUnavailableKey";
 @dynamic qbEventUnavailable;
 
 + (void)load {
-    QBOverrideImplementation([UIButton class], @selector(sendAction:to:forEvent:), ^id _Nonnull(__unsafe_unretained Class  _Nonnull originClass, SEL  _Nonnull originCMD, IMP  _Nonnull (^ _Nonnull originalIMPProvider)(void)) {
-        return ^(UIButton *selfObject, SEL action, id target, UIEvent *event) {
-            if (selfObject.qbEventUnavailable == NO) {
-                selfObject.qbEventUnavailable = YES;
-               
-                // call super
-                void (*originSelectorIMP)(id, SEL, id, UIEvent*);
-                originSelectorIMP = (void (*)(id, SEL, id, UIEvent*))originalIMPProvider();
-                originSelectorIMP(selfObject, action, target, event);
+    QBExchangeImplementations([UIButton class], @selector(sendAction:to:forEvent:), @selector(qbSendAction:to:forEvent:));
+}
 
-                typeof(selfObject) __weak weakSelf = selfObject;
-                QBDispatch_async_on_main_queue_delay(^{
-                    typeof(weakSelf) __strong selfObject = weakSelf;
-                    selfObject.qbEventUnavailable = NO;
-                }, selfObject.qbEventInterval);
-            }
-        };
-    });
+- (void)qbSendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
+    if (self.qbEventUnavailable == NO) {
+        self.qbEventUnavailable = YES;
+        [self qbSendAction:action to:target forEvent:event];
+        QBWeakSelf
+        QBDispatch_async_on_main_queue_delay(^{
+            QBStrongSelf
+            self.qbEventUnavailable = NO;
+        }, self.qbEventInterval);
+    }
 }
 
 #pragma mark - EventInterval
