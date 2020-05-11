@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-    QBFoundation iOS基础库 OC
+                            QBFoundation iOS基础库 OC
                        DESC
 
   s.homepage         = 'https://github.com/luqinbin/QBFoundation'
@@ -37,6 +37,6 @@ Pod::Spec.new do |s|
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'Foundation', 'CoreServices'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -23,6 +23,7 @@
 		8E383EA22460494900D58AA9 /* QBGraphicsUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E383EA12460494900D58AA9 /* QBGraphicsUtilities.m */; };
 		8E383EA5246054AC00D58AA9 /* UIColor+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E383EA4246054AC00D58AA9 /* UIColor+QBExtension.m */; };
 		8E383EA82462572D00D58AA9 /* NSObject+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E383EA72462572D00D58AA9 /* NSObject+QBExtension.m */; };
+		8E7EE1E32468EC52002ED420 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDEA15F24684FB00094F01C /* CoreServices.framework */; };
 		8E9E9D452464619600A54A0D /* QBRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9E9D442464619600A54A0D /* QBRuntime.m */; };
 		8EDEA1172466F1D30094F01C /* NSArray+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA1162466F1D30094F01C /* NSArray+QBExtension.m */; };
 		8EDEA11B246702230094F01C /* NSNumber+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA11A246702230094F01C /* NSNumber+QBExtension.m */; };
@@ -47,7 +48,6 @@
 		8EDEA15724682E720094F01C /* UIViewController+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA15624682E720094F01C /* UIViewController+QBExtension.m */; };
 		8EDEA15A24682EF70094F01C /* UIView+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA15924682EF70094F01C /* UIView+QBExtension.m */; };
 		8EDEA15D24683CE30094F01C /* UIImage+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA15C24683CE30094F01C /* UIImage+QBExtension.m */; };
-		8EDEA16024684FB00094F01C /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDEA15F24684FB00094F01C /* CoreServices.framework */; };
 		8EDEA163246850F80094F01C /* UITextView+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA162246850F80094F01C /* UITextView+QBExtension.m */; };
 		8EDEA1662468515C0094F01C /* UITextField+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA1652468515C0094F01C /* UITextField+QBExtension.m */; };
 		8EDEA169246851EF0094F01C /* UITableView+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA168246851EF0094F01C /* UITableView+QBExtension.m */; };
@@ -186,7 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EDEA16024684FB00094F01C /* CoreServices.framework in Frameworks */,
+				8E7EE1E32468EC52002ED420 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +239,7 @@
 				8E383E5A245E878300D58AA9 /* ViewController.h */,
 				8E383E5B245E878300D58AA9 /* ViewController.m */,
 				8E383E5D245E878300D58AA9 /* Main.storyboard */,
+				8EDEA1182466F6030094F01C /* QBFoundation-prefix.pch */,
 				8E383E60245E878400D58AA9 /* Assets.xcassets */,
 				8E383E62245E878400D58AA9 /* LaunchScreen.storyboard */,
 				8E383E65245E878400D58AA9 /* Info.plist */,
@@ -268,7 +269,6 @@
 		8E383E89245E879C00D58AA9 /* QBFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				8EDEA1182466F6030094F01C /* QBFoundation-prefix.pch */,
 				8E383E8A245E883900D58AA9 /* QBFoundation.h */,
 				8E383E8B245E88E200D58AA9 /* Custom */,
 				8E383E94246035C500D58AA9 /* Foundation */,
@@ -739,12 +739,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ER283WPG8S;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/QBFoundation/QBFoundation/QBFoundation-prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QBFoundation/QBFoundation-prefix.pch";
 				INFOPLIST_FILE = QBFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lqb.QBFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -758,12 +762,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ER283WPG8S;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/QBFoundation/QBFoundation/QBFoundation-prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/QBFoundation/QBFoundation-prefix.pch";
 				INFOPLIST_FILE = QBFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lqb.QBFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
