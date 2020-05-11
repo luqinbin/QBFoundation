@@ -148,14 +148,14 @@
 }
 
 #pragma mark - Random
-+ (int)srRandomInt:(int)maxInt {
++ (int)qbRandomInt:(int)maxInt {
     int r = arc4random() % maxInt;
     
     return r;
 }
 
 + (BOOL)qbRandomBool {
-    return [NSNumber srRandomInt:2] != 0 ? YES : NO;
+    return [NSNumber qbRandomInt:2] != 0 ? YES : NO;
 }
 
 + (CGFloat)qbRandoqbGFloat {

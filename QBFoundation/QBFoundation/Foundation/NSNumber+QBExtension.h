@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSNumber *)qbNumberWithCGFloat:(CGFloat)value;
 
 #pragma mark - Random
-+ (int)srRandomInt:(int)maxInt;
++ (int)qbRandomInt:(int)maxInt;
 
 + (BOOL)qbRandomBool;
 
