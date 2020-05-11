@@ -7,6 +7,8 @@
 //
 
 #import "NSObject+QBExtension.h"
+#import "NSDictionary+QBExtension.h"
+#import "NSArray+QBExtension.h"
 #import <objc/runtime.h>
 
 static const int qb_ns_block_key;
@@ -393,31 +395,31 @@ static const int qb_ns_block_key;
 
 #pragma mark - NSString
 + (NSString *)qbObjectToString:(id _Nullable)object {
-//    if (object) {
-//        if ([object isKindOfClass:[NSObject class]]) {
-//            if ([object isKindOfClass:[NSNull class]]) {
-//                return @"";
-//            } else if ([object isKindOfClass:[NSData class]]) {
-//                return [[NSString alloc] initWithData:((NSData *)object) encoding:NSUTF8StringEncoding];
-//            } else if ([object isKindOfClass:[NSNumber class]]) {
-//                return [((NSNumber *)object) stringValue];
-//            } else if ([object isKindOfClass:[NSString class]]) {
-//                return object;
-//            } else if ([object isKindOfClass:[NSDictionary class]]) {
-//                return [((NSDictionary *)object) qbJSONPrintedString];
-//            } else if ([object isKindOfClass:[NSMutableDictionary class]]) {
-//                return [((NSMutableDictionary *)object) qbJSONPrintedString];
-//            } else if ([object isKindOfClass:[NSArray class]]) {
-//                return [((NSArray *)object) qbJSONPrintedString];
-//            } else if ([object isKindOfClass:[NSMutableArray class]]) {
-//                return [((NSMutableArray *)object) qbJSONPrintedString];
-//            } else {
-//                return [NSString stringWithFormat:@"%@", object];
-//            }
-//        } else {
-//            return [NSString stringWithFormat:@"%@",object];
-//        }
-//    }
+    if (object) {
+        if ([object isKindOfClass:[NSObject class]]) {
+            if ([object isKindOfClass:[NSNull class]]) {
+                return @"";
+            } else if ([object isKindOfClass:[NSData class]]) {
+                return [[NSString alloc] initWithData:((NSData *)object) encoding:NSUTF8StringEncoding];
+            } else if ([object isKindOfClass:[NSNumber class]]) {
+                return [((NSNumber *)object) stringValue];
+            } else if ([object isKindOfClass:[NSString class]]) {
+                return object;
+            } else if ([object isKindOfClass:[NSDictionary class]]) {
+                return [((NSDictionary *)object) qbJSONPrintedString];
+            } else if ([object isKindOfClass:[NSMutableDictionary class]]) {
+                return [((NSMutableDictionary *)object) qbJSONPrintedString];
+            } else if ([object isKindOfClass:[NSArray class]]) {
+                return [((NSArray *)object) qbJSONPrintedString];
+            } else if ([object isKindOfClass:[NSMutableArray class]]) {
+                return [((NSMutableArray *)object) qbJSONPrintedString];
+            } else {
+                return [NSString stringWithFormat:@"%@", object];
+            }
+        } else {
+            return [NSString stringWithFormat:@"%@",object];
+        }
+    }
     return @"";
 }
 
