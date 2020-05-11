@@ -91,7 +91,9 @@ FOUNDATION_EXPORT UIFont *_Nullable QBFontForHelvetica(CGFloat fontSize);
 #pragma mark - GCD
 CG_INLINE void QBDispatch_async_on_main_queue(void (^block)(void)) {
     if (pthread_main_np()) {
-        !block ?: block();
+        if (block) {
+            block();
+        }
     } else {
         if (block) {
             dispatch_async(dispatch_get_main_queue(), block);
@@ -101,7 +103,9 @@ CG_INLINE void QBDispatch_async_on_main_queue(void (^block)(void)) {
 
 CG_INLINE void QBDispatch_sync_on_main_queue(void (^block)(void)) {
     if (pthread_main_np()) {
-        !block ?: block();
+        if (block) {
+            block();
+        }
     } else {
         if (block) {
             dispatch_sync(dispatch_get_main_queue(), block);
