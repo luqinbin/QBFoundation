@@ -10,23 +10,23 @@
 
 @implementation NSBundle (QBExtension)
 
-+ (NSString *)bundleShortVersionString {
++ (NSString *)qbBundleShortVersionString {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
-+ (NSString *)bundleVersion {
++ (NSString *)qbBundleVersion {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }
 
-+ (NSString *)bundleName {
++ (NSString *)qbBundleName {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
 }
 
-+ (NSString *)bundleIdentifier {
++ (NSString *)qbBundleIdentifier {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 }
 
-+ (NSString *)bundleDisplayName {
++ (NSString *)qbBundleDisplayName {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
 }
 

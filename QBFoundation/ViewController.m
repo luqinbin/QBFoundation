@@ -31,7 +31,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(100, 300, 50, 50);
-    [button setBackgroundColor:QBColorHex(@"#1B1C2B")];
+    [button setBackgroundColor:QBColorHex(@"#EB1C2B")];
     [self.view addSubview:button];
     [button qbAddClickBlock:^{
         NSLog(@"hhhhhaaa");

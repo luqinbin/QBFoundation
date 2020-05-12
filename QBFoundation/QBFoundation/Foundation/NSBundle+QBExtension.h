@@ -13,19 +13,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSBundle (QBExtension)
 
 /// CFBundleShortVersionString
-+ (NSString *)bundleShortVersionString;
++ (NSString *)qbBundleShortVersionString;
 
 /// CFBundleVersion
-+ (NSString *)bundleVersion;
++ (NSString *)qbBundleVersion;
 
 /// CFBundleName
-+ (NSString *)bundleName;
++ (NSString *)qbBundleName;
 
 /// CFBundleIdentifier
-+ (NSString *)bundleIdentifier;
++ (NSString *)qbBundleIdentifier;
 
 /// CFBundleDisplayName
-+ (NSString *)bundleDisplayName;
++ (NSString *)qbBundleDisplayName;
 
 @end
 
