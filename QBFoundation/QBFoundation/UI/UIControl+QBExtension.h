@@ -12,6 +12,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIControl (QBExtension)
 
+#pragma mark - EventInterval
+
+@property (nonatomic, assign) BOOL qbEventUnavailable;
+
+/** 点击时间响应时间间隔 */
+@property (nonatomic, assign) NSTimeInterval qbEventInterval;
+
+#pragma mark - TouchArea
+
+/**
+ 设置按钮额外热区
+ */
+@property (nonatomic, assign) UIEdgeInsets qbTouchAreaInsets;
+
+/**
+ 设置按钮额外热区
+
+ @param edge 边缘大小
+ */
+- (void)setQbTouchAreaEdge:(CGFloat)edge;
+
 #pragma mark - Block
 /**
  从内部调度表移除所有的目标和动作

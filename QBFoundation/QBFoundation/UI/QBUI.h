@@ -16,7 +16,6 @@
 #import <QBFoundation/UIWindow+QBExtension.h>
 #import <QBFoundation/UIColor+QBExtension.h>
 #import <QBFoundation/UIView+QBExtension.h>
-#import <QBFoundation/UIButton+QBExtension.h>
 #import <QBFoundation/UILabel+QBExtension.h>
 #import <QBFoundation/UIImage+QBExtension.h>
 #import <QBFoundation/UITextView+QBExtension.h>
@@ -32,7 +31,6 @@
 #import "UIWindow+QBExtension.h"
 #import "UIColor+QBExtension.h"
 #import "UIView+QBExtension.h"
-#import "UIButton+QBExtension.h"
 #import "UIViewController+QBExtension.h"
 #import "UILabel+QBExtension.h"
 #import "UIImage+QBExtension.h"

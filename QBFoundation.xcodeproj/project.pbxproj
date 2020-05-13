@@ -43,7 +43,6 @@
 		8EDEA1452467D3480094F01C /* NSDate+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA1442467D3480094F01C /* NSDate+QBExtension.m */; };
 		8EDEA14B2467D9DD0094F01C /* CALayer+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA14A2467D9DD0094F01C /* CALayer+QBExtension.m */; };
 		8EDEA14E2467E7EA0094F01C /* UIApplication+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA14D2467E7EA0094F01C /* UIApplication+QBExtension.m */; };
-		8EDEA1512467E9090094F01C /* UIButton+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA1502467E9090094F01C /* UIButton+QBExtension.m */; };
 		8EDEA1542467F1860094F01C /* UILabel+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA1532467F1860094F01C /* UILabel+QBExtension.m */; };
 		8EDEA15724682E720094F01C /* UIViewController+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA15624682E720094F01C /* UIViewController+QBExtension.m */; };
 		8EDEA15A24682EF70094F01C /* UIView+QBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA15924682EF70094F01C /* UIView+QBExtension.m */; };
@@ -152,8 +151,6 @@
 		8EDEA14A2467D9DD0094F01C /* CALayer+QBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+QBExtension.m"; sourceTree = "<group>"; };
 		8EDEA14C2467E7EA0094F01C /* UIApplication+QBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+QBExtension.h"; sourceTree = "<group>"; };
 		8EDEA14D2467E7EA0094F01C /* UIApplication+QBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+QBExtension.m"; sourceTree = "<group>"; };
-		8EDEA14F2467E9090094F01C /* UIButton+QBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+QBExtension.h"; sourceTree = "<group>"; };
-		8EDEA1502467E9090094F01C /* UIButton+QBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QBExtension.m"; sourceTree = "<group>"; };
 		8EDEA1522467F1860094F01C /* UILabel+QBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+QBExtension.h"; sourceTree = "<group>"; };
 		8EDEA1532467F1860094F01C /* UILabel+QBExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+QBExtension.m"; sourceTree = "<group>"; };
 		8EDEA15524682E720094F01C /* UIViewController+QBExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QBExtension.h"; sourceTree = "<group>"; };
@@ -302,8 +299,6 @@
 				8EDEA15624682E720094F01C /* UIViewController+QBExtension.m */,
 				8EDEA16D246854920094F01C /* UIControl+QBExtension.h */,
 				8EDEA16E246854920094F01C /* UIControl+QBExtension.m */,
-				8EDEA14F2467E9090094F01C /* UIButton+QBExtension.h */,
-				8EDEA1502467E9090094F01C /* UIButton+QBExtension.m */,
 				8E383EA3246054AC00D58AA9 /* UIColor+QBExtension.h */,
 				8E383EA4246054AC00D58AA9 /* UIColor+QBExtension.m */,
 				8E383E90246018AF00D58AA9 /* UIWindow+QBExtension.h */,
@@ -536,7 +531,6 @@
 				8E383E56245E878300D58AA9 /* AppDelegate.m in Sources */,
 				8EDEA12D24670C0F0094F01C /* NSIndexPath+QBExtension.m in Sources */,
 				8EDEA169246851EF0094F01C /* UITableView+QBExtension.m in Sources */,
-				8EDEA1512467E9090094F01C /* UIButton+QBExtension.m in Sources */,
 				8EDEA13624670D370094F01C /* NSException+QBExtension.m in Sources */,
 				8EDEA15724682E720094F01C /* UIViewController+QBExtension.m in Sources */,
 				8EFCB1202465C06800B0B895 /* NSAttributedString+QBExtension.m in Sources */,
