@@ -9,7 +9,7 @@
 #ifndef Foundation_h
 #define Foundation_h
 
-#if __has_include(<MCFoundation/Foundation.h>)
+#if __has_include(<QBFoundation/Foundation.h>)
 
 #import <QBFoundation/NSBundle+QBExtension.h>
 #import <QBFoundation/NSObject+QBExtension.h>
