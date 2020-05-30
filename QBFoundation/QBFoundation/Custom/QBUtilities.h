@@ -16,9 +16,9 @@ FOUNDATION_EXPORT NSString *_Nullable QBClipboardContent(void);
 
 #pragma mark - keyedArchiver/keyedUnarchiver
 /// 封装归档keyedArchiver操作 
-FOUNDATION_EXPORT void QBObjArchive(_Nonnull id objToBeArchived, NSString *key, NSString *filePath);
+FOUNDATION_EXPORT BOOL QBObjArchive(_Nonnull id objToBeArchived, NSString *key, NSString *filePath);
 /// 封装反归档keyedUnarchiver操作 
-FOUNDATION_EXPORT void QBObjUnArchive(_Nonnull id objToStoreData, NSString *key, NSString *filePath);
+FOUNDATION_EXPORT id QBObjUnArchive(NSString * _Nonnull key, NSString *filePath);
 
 #pragma mark - AppDelegate
 /// 简化 [[UIApplication sharedApplication] delegate]

@@ -23,19 +23,22 @@ NSString *_Nullable QBClipboardContent(void) {
 }
 
 #pragma mark - keyedArchiver/keyedUnarchiver
-void QBObjArchive(_Nonnull id objToBeArchived, NSString *key, NSString *filePath) {
+BOOL QBObjArchive(_Nonnull id objToBeArchived, NSString *key, NSString *filePath) {
     NSMutableData *data = [NSMutableData data];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
     [archiver encodeObject:objToBeArchived forKey:key];
     [archiver finishEncoding];
-    [data writeToFile:filePath atomically:YES];
+    
+    return [data writeToFile:filePath atomically:YES];
 }
 
-void QBObjUnArchive(_Nonnull id objToStoreData, NSString *key, NSString *filePath) {
+id QBObjUnArchive(NSString * _Nonnull key, NSString *filePath) {
     NSMutableData *dedata = [NSMutableData dataWithContentsOfFile:filePath];
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:dedata];
-    objToStoreData = [unarchiver decodeObjectForKey:key];
+    id objToStoreData = [unarchiver decodeObjectForKey:key];
     [unarchiver finishDecoding];
+    
+    return objToStoreData;
 }
 
 #pragma mark - AppDelegate
