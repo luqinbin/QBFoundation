@@ -26,6 +26,9 @@
     [view.layer qbSetDottedlineBorderWithColor:[UIColor redColor] width:2 length:5 space:6 cap:kCALineCapRound];
     
     [view qbSetGradientBackgroundWithColors:@[UIColor.cyanColor, UIColor.yellowColor] locations:@[@(0), @(1)] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(1, 1)];
+    
+    [view qbSetGradientBackgroundWithColors:<#(nonnull NSArray<UIColor *> *)#> locations:<#(nonnull NSArray<NSNumber *> *)#>]
+    
     [view.layer qbSetShadowPathWithColor:UIColor.redColor shadowOpacity:1 shadowRadius:15 shadowSide:QBShadowPathBottom shadowPathWidth:5];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QBFoundation'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'iOS基础库'
 
 # This description is used to generate tags and improve search results.

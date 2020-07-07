@@ -19,8 +19,8 @@
     
     switch (gradientDirection) {
         case QBImageGradientDirection_LeftToRight:
-            start = CGPointMake(0.0, 0.0);
-            end = CGPointMake(0.0, 1.0);
+            start = CGPointMake(0.0, 0.5);
+            end = CGPointMake(1.0, 0.5);
             break;
         case QBImageGradientDirection_TopToBottom:
             start = CGPointMake(0.0, 0.0);
@@ -644,6 +644,21 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
+}
+
+- (UIImage *)qbSuperposeImage:(UIImage *)image {
+    UIGraphicsBeginImageContext(self.size);
+
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+
+    [self drawInRect:CGRectMake(0, 0, self.size.width, self.size.height)];
+    [image drawInRect:CGRectMake((self.size.width - image.size.width)/2,(self.size.height - image.size.height)/2, image.size.width, image.size.height)];
+
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+
+    return resultingImage;
 }
 
 @end

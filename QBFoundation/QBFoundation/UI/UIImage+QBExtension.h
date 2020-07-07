@@ -247,6 +247,10 @@ typedef NS_ENUM(NSInteger, QBImageGradientDirection) {
  */
 - (UIImage *)qbImageWithTitle:(NSString *)title font:(UIFont *)font color:(nonnull UIColor *)color;
 
+/// 叠加图片
+/// @param image UIImage
+- (UIImage *)qbSuperposeImage:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
