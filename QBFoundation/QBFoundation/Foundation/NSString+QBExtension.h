@@ -716,6 +716,19 @@ NS_ASSUME_NONNULL_BEGIN
  @return CGSize
  */
 + (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize lines:(NSInteger)lines lineSpacing:(CGFloat)lineSpacing;
+
+/**
+ 获取文本的大小
+
+ @param string 文本
+ @param font 字体
+ @param maxSize 最大范围 若size为CGSizeZero，则size为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+ @param lines 行数
+ @param lineSpacing 行间距
+ @param paragraphSpacing 段落间距
+ @return CGSize
+ */
++ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize lines:(NSInteger)lines lineSpacing:(CGFloat)lineSpacing paragraphSpacing:(CGFloat)paragraphSpacing;
     
 /**
  获取文本的宽度 宽度默认为CGFLOAT_MAX
