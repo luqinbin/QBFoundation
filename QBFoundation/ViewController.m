@@ -38,7 +38,7 @@
     }];
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 400, 200, 200)];
-    imageView.image = [QBImage(@"test_icon") qbBlurredImage:0.8];
+    imageView.image = [QBImage(@"test_icon") qbBlurredImage:1];
     
     [self.view addSubview:imageView];
 }

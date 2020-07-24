@@ -1154,6 +1154,24 @@
     return lines;
 }
 
++ (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing paragraphSpacing:(CGFloat)paragraphSpacing {
+    if ([NSString qbIsEmpty:string]) {
+        return 0;
+    }
+    if (maxWidth <= 0) {
+        return 0;
+    }
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:lineSpacing];
+    [style setParagraphSpacing:paragraphSpacing];
+    
+    NSDictionary *attrs = @{NSFontAttributeName : font, NSParagraphStyleAttributeName : style};
+    CGSize size = [string boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:attrs context:nil].size;
+    
+    return  ceilf(size.height);
+}
+
 + (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)width {
     NSDictionary *attrs = @{NSFontAttributeName :font};
     CGSize maxSize = CGSizeMake(width, MAXFLOAT);

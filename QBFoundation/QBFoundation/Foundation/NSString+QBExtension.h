@@ -743,6 +743,18 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param string 文本
  @param font 字体
+ @param maxWidth 最大宽度
+ @param lineSpacing 行间距
+ @param paragraphSpacing 段落间距
+ @return NSUInteger
+ */
++ (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing paragraphSpacing:(CGFloat)paragraphSpacing;
+
+/**
+ 在指定宽度的情况下，计算指定文本的高度
+
+ @param string 文本
+ @param font 字体
  @param width 最大宽度
  @return 文本的高度
  */
