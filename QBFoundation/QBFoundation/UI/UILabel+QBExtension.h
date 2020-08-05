@@ -42,12 +42,15 @@ NS_ASSUME_NONNULL_BEGIN
                   backgroundColor:(UIColor * _Nullable)backgroundColor;
 
 #pragma mark - paragraph
-
 // 改变行间距、段落间距
 - (void)qbChangeLineSpace:(float)lineSpacespace paragraphSpacing:(float)paragraphSpacing;
 
 // 改变字间距
 - (void)qbChangeWordSpace:(float)space;
+
+#pragma mark - Separate
+// 获取每一行string
+- (NSArray<NSString *> *)qbGetSeparatedLineStrings;
 
 @end
 
