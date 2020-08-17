@@ -211,6 +211,7 @@
     }
     [paragraphStyle setLineSpacing:newLineSpacing];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    [attributes setObject:font forKey:NSFontAttributeName];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     CGFloat baselineOffset = (lineHeight - font.lineHeight) / 4;
     [attributes setObject:@(baselineOffset) forKey:NSBaselineOffsetAttributeName];
@@ -228,6 +229,7 @@
     }
     [paragraphStyle setLineSpacing:newLineSpacing];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    [attributes setObject:font forKey:NSFontAttributeName];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     CGFloat baselineOffset = (lineHeight - font.lineHeight) / 4;
     [attributes setObject:@(baselineOffset) forKey:NSBaselineOffsetAttributeName];
