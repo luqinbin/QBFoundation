@@ -37,7 +37,6 @@
     }
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     
@@ -65,7 +64,6 @@
     }
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     
@@ -97,7 +95,6 @@
     }
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     
@@ -127,7 +124,6 @@
     }
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     
@@ -157,7 +153,6 @@
     }
     
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     

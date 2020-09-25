@@ -1036,7 +1036,7 @@
     if ([NSString qbIsEmpty:self]) {
         return NO;
     }
-    NSString *regex = @"^(1[3|4|5|7|8][0-9])\\d{8}$";
+    NSString *regex = @"^(1[3|4|5|7|8|9][0-9])\\d{8}$";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     return [predicate evaluateWithObject:self];
 }
