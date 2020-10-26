@@ -257,6 +257,22 @@
         return @"iPhone XS Max";
     } else if ([machine isEqualToString:@"iPhone11,8"]) {
         return @"iPhone XR";
+    } else if ([machine isEqualToString:@"iPhone12,1"]) {
+        return @"iPhone 11";
+    } else if ([machine isEqualToString:@"iPhone12,3"]) {
+        return @"iPhone 11 Pro";
+    } else if ([machine isEqualToString:@"iPhone12,5"]) {
+        return @"iPhone 11 Pro Max";
+    } else if ([machine isEqualToString:@"iPhone12,8"]) {
+        return @"iPhone SE (2rd generation)";
+    } else if ([machine isEqualToString:@"iPhone13,1"]) {
+        return @"iPhone 12 mini";
+    } else if ([machine isEqualToString:@"iPhone13,2"]) {
+        return @"iPhone 12";
+    } else if ([machine isEqualToString:@"iPhone13,3"]) {
+        return @"iPhone 12 Pro";
+    } else if ([machine isEqualToString:@"iPhone13,4"]) {
+        return @"iPhone 12 Pro Max";
     } else if ([machine isEqualToString:@"iPod1,1"]) {
         return @"iPod Touch";
     } else if ([machine isEqualToString:@"iPod2,1"]) {
@@ -303,6 +319,9 @@
     } else if ([machine isEqualToString:@"iPad5,1"] ||
                [machine isEqualToString:@"iPad5,2"]) {
         return @"iPad Mini 4";
+    } else if ([machine isEqualToString:@"iPad11,1"] ||
+               [machine isEqualToString:@"iPad11,2"]) {
+        return @"iPad Mini (5th generation)";
     } else if ([machine isEqualToString:@"iPad5,3"] ||
                [machine isEqualToString:@"iPad5,4"]) {
         return @"iPad Air 2";
@@ -329,11 +348,23 @@
                [machine isEqualToString:@"iPad8,3"] ||
                [machine isEqualToString:@"iPad8,4"]) {
         return @"iPad Pro 11-inch";
+    } else if ([machine isEqualToString:@"iPad8,9"] ||
+               [machine isEqualToString:@"iPad8,10"]) {
+        return @"iPad Pro 11-inch 2";
     } else if ([machine isEqualToString:@"iPad8,5"] ||
                [machine isEqualToString:@"iPad8,6"] ||
                [machine isEqualToString:@"iPad8,7"] ||
                [machine isEqualToString:@"iPad8,8"]) {
         return @"iPad Pro 12.9-inch 3";
+    } else if ([machine isEqualToString:@"iPad8,11"] ||
+               [machine isEqualToString:@"iPad8,12"]) {
+        return @"iPad Pro 12.9-inch 4";
+    } else if ([machine isEqualToString:@"iPad11,3"] ||
+               [machine isEqualToString:@"iPad11,4"]) {
+        return @"iPad Air (3rd generation)";
+    } else if ([machine isEqualToString:@"iPad13,1"] ||
+               [machine isEqualToString:@"iPad13,2"]) {
+        return @"iPad Air (4rd generation)";
     } else if ([machine isEqualToString:@"AirPods1,1"]) {
         return @"AirPods";
     } else if ([machine isEqualToString:@"AppleTV2,1"]) {
@@ -364,6 +395,21 @@
                [machine isEqualToString:@"Watch4,3"] ||
                [machine isEqualToString:@"Watch4,4"]) {
         return @"Apple Watch Series 4";
+    } else if ([machine isEqualToString:@"Watch5,1"] ||
+               [machine isEqualToString:@"Watch5,2"] ||
+               [machine isEqualToString:@"Watch5,3"] ||
+               [machine isEqualToString:@"Watch5,4"]) {
+        return @"Apple Watch Series 5";
+    } else if ([machine isEqualToString:@"Watch5,9"] ||
+               [machine isEqualToString:@"Watch5,10"] ||
+               [machine isEqualToString:@"Watch5,11"] ||
+               [machine isEqualToString:@"Watch5,12"]) {
+        return @"Apple Watch SE";
+    } else if ([machine isEqualToString:@"Watch6,1"] ||
+               [machine isEqualToString:@"Watch6,2"] ||
+               [machine isEqualToString:@"Watch6,3"] ||
+               [machine isEqualToString:@"Watch6,4"]) {
+        return @"Apple Watch Series 6";
     } else if ([machine isEqualToString:@"i386"] ||
                [machine isEqualToString:@"x86_64"]) {
         return @"Simulator";
@@ -521,7 +567,13 @@
             (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812)) ||
             CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375)) ||
             CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(414, 896)) ||
-            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(896, 414))));
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(896, 414)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(390, 844)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(844, 390)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(360, 780)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(780, 360)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(428, 926)) ||
+            CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(926, 428))));
 }
 
 // 运营商信息
