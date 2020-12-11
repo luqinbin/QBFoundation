@@ -328,7 +328,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 以特定长度分割数组
 /// @param subSize 分割子数组元素个数
 /// @return 返回二维数组
-- (NSArray *)splitwithSubSize:(int)subSize;
+- (NSArray *)qbSplitwithSubSize:(int)subSize;
 
 /**
  删除数组的重复对象并返回新的数组 使用`isEqual:`剔除

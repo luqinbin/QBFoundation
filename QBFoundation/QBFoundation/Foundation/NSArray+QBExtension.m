@@ -494,7 +494,7 @@
     return @[first, second];
 }
 
-- (NSArray *)splitwithSubSize:(int)subSize {
+- (NSArray *)qbSplitwithSubSize:(int)subSize {
     unsigned long count = self.count % subSize == 0 ? (self.count / subSize) : (self.count / subSize + 1);
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     NSMutableArray *arr1 = [[NSMutableArray alloc] init];
