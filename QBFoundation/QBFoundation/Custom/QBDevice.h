@@ -130,6 +130,15 @@ typedef NS_ENUM(NSUInteger, SSOperatorsType) {
 /// 状态栏的高度
 + (CGFloat)statusBarHeight;
 
+/// Tabbar高度
++ (CGFloat)tabbarHeight;
+
+/// TabbarSafeBottomMargin
++ (CGFloat)tabbarSafeBottomMargin;
+
+/// Status bar & navigation bar height.
++ (CGFloat)statusBarAndNavigationBarHeight;
+
 /// 获取屏幕亮度
 + (CGFloat)screenBrightness;
 

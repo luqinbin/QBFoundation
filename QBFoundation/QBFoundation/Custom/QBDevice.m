@@ -508,6 +508,30 @@
     }
 }
 
++ (CGFloat)tabbarHeight {
+    if ([self isiPhoneXSeries]) {
+        return 83.f;
+    } else {
+        return 49.f;
+    }
+}
+
++ (CGFloat)tabbarSafeBottomMargin {
+    if ([self isiPhoneXSeries]) {
+        return 34.f;
+    } else {
+        return 0.f;
+    }
+}
+
++ (CGFloat)statusBarAndNavigationBarHeight {
+    if ([self isiPhoneXSeries]) {
+        return 88.f;
+    } else {
+        return 64.f;
+    }
+}
+
 + (CGFloat)screenBrightness {
     @try {
         CGFloat brightness = [UIScreen mainScreen].brightness;
