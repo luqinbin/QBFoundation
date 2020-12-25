@@ -107,6 +107,10 @@ void QBPostNotificationForUserInfo(NSNotificationName name, NSDictionary *_Nulla
     [[NSNotificationCenter defaultCenter] postNotificationName:name object:nil userInfo:userInfo];
 }
 
+void QBPostNotificationWithObjectAndUserInfo(NSNotificationName name, _Nullable id anObject, NSDictionary *_Nullable userInfo) {
+    [[NSNotificationCenter defaultCenter] postNotificationName:name object:anObject userInfo:userInfo];
+}
+
 #pragma mark - CGRect
 CGRect QBCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMode mode) {
     rect = CGRectStandardize(rect);

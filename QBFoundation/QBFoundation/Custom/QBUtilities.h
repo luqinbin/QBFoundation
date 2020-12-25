@@ -179,6 +179,16 @@ FOUNDATION_EXPORT void QBPostNotificationForObject(NSNotificationName name, _Nul
  */
 FOUNDATION_EXPORT void QBPostNotificationForUserInfo(NSNotificationName name, NSDictionary *_Nullable userInfo);
 
+/**
+ 发送通知
+ 
+ @param name 名字
+ @param anObject id类型对象
+ @param userInfo 信息
+ */
+FOUNDATION_EXPORT void QBPostNotificationWithObjectAndUserInfo(NSNotificationName name, _Nullable id anObject, NSDictionary *_Nullable userInfo);
+
+
 #pragma mark - degrees/radians
 /// 角度转弧度
 /// @param degrees 角度
