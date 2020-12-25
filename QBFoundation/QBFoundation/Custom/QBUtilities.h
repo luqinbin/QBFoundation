@@ -169,7 +169,7 @@ FOUNDATION_EXPORT void QBPostNotification(NSNotificationName name);
  @param name 名字
  @param anObject id类型对象
  */
-FOUNDATION_EXPORT void QBPostNotificationForObject(NSNotificationName name, _Nullable id anObject);
+FOUNDATION_EXPORT void QBPostNotificationWithObject(NSNotificationName name, _Nullable id anObject);
 
 /**
  发送通知
@@ -177,7 +177,7 @@ FOUNDATION_EXPORT void QBPostNotificationForObject(NSNotificationName name, _Nul
  @param name 名字
  @param userInfo 信息
  */
-FOUNDATION_EXPORT void QBPostNotificationForUserInfo(NSNotificationName name, NSDictionary *_Nullable userInfo);
+FOUNDATION_EXPORT void QBPostNotificationWithUserInfo(NSNotificationName name, NSDictionary *_Nullable userInfo);
 
 /**
  发送通知

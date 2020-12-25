@@ -96,14 +96,14 @@ void QBRemoveAllNotification(id observer) {
 }
 
 void QBPostNotification(NSNotificationName name) {
-    QBPostNotificationForObject(name, nil);
+    QBPostNotificationWithObject(name, nil);
 }
 
-void QBPostNotificationForObject(NSNotificationName name, _Nullable id anObject) {
+void QBPostNotificationWithObject(NSNotificationName name, _Nullable id anObject) {
     [[NSNotificationCenter defaultCenter] postNotificationName:name object:anObject];
 }
 
-void QBPostNotificationForUserInfo(NSNotificationName name, NSDictionary *_Nullable userInfo) {
+void QBPostNotificationWithUserInfo(NSNotificationName name, NSDictionary *_Nullable userInfo) {
     [[NSNotificationCenter defaultCenter] postNotificationName:name object:nil userInfo:userInfo];
 }
 
