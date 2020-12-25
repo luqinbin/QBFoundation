@@ -13,7 +13,7 @@
 #define QBWeakSelf typeof(self) __weak weakSelf = self;
 #define QBStrongSelf typeof(weakSelf) __strong self = weakSelf;
 
-#define Safe(obj) obj ? obj : [NSNull null]
+#define QBSafe(obj) obj ? obj : [NSNull null]
 
 #if __clang__
 #define __PRAGMA_NO_EXTRA_ARG_WARNINGS_PUSH(__warc) \
