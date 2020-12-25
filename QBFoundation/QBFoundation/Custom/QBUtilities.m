@@ -83,7 +83,7 @@ UIFont *_Nullable QBFontForHelvetica(CGFloat fontSize) {
 }
 
 #pragma mark - NSNotification
-void QBResgiterNotification(id observer, SEL selector,  NSNotificationName _Nullable name) {
+void QBRegisterNotification(id observer, SEL selector,  NSNotificationName _Nullable name) {
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:name object:nil];
 }
 

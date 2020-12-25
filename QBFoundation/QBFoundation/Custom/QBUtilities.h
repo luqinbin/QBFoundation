@@ -139,7 +139,7 @@ CG_INLINE void QBDispatch_async_on_global_queue_delay(void (^block)(void), int64
  @param selector 选择器
  @param name 名字
  */
-FOUNDATION_EXPORT void QBResgiterNotification(id observer, SEL selector,  NSNotificationName _Nullable name);
+FOUNDATION_EXPORT void QBRegisterNotification(id observer, SEL selector,  NSNotificationName _Nullable name);
 
 /**
  移除某个通知
