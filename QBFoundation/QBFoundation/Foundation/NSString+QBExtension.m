@@ -1078,108 +1078,84 @@
 }
 
 #pragma mark - CGSize
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font {
-    return [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
++ (CGFloat)qbWidthWithString:(NSString *)string font:(UIFont *)font {
+    return [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) mode:NSLineBreakByWordWrapping].width;
 }
 
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth {
-    return [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(maxWidth, CGFLOAT_MAX) lines:1];
++ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize mode:(NSLineBreakMode)lineBreakMode {
+    return [NSString qbSizeWithString:string font:font maxSize:maxSize wordSpacing:0 lineSpacing:0 paragraphSpacing:0 mode:NSLineBreakByWordWrapping];
 }
 
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize {
-    return [NSString qbSizeWithString:string font:font maxSize:maxSize lines:1];
-}
-
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font lines:(NSInteger)lines {
-    return [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) lines:lines];
-}
-
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize lines:(NSInteger)lines {
-    return [NSString qbSizeWithString:string font:font maxSize:maxSize lines:lines lineSpacing:0];
-}
-    
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize lines:(NSInteger)lines lineSpacing:(CGFloat)lineSpacing {
-    if ([NSString qbIsEmpty:string]) {
++ (CGSize)qbSizeWithString:(NSString *)string
+                      font:(UIFont *)font
+                   maxSize:(CGSize)maxSize
+               wordSpacing:(CGFloat)wordSpacing
+               lineSpacing:(CGFloat)lineSpacing
+          paragraphSpacing:(CGFloat)paragraphSpacing
+                      mode:(NSLineBreakMode)lineBreakMode {
+    if ([NSString qbIsEmpty:string] || !font) {
         return CGSizeZero;
     }
     if (CGSizeEqualToSize(CGSizeZero, maxSize)) {
         maxSize = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
     }
-    if (lines == 1) {
-        NSDictionary *attrs = @{NSFontAttributeName : font};
-        CGSize size = [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-        if (size.width == 0) {
-            size = CGSizeZero;
-        }
-        return CGSizeMake(ceil(MIN(size.width, maxSize.width)), ceil(size.height));
-    } else {
-        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-        [style setLineBreakMode:NSLineBreakByCharWrapping];
-        CGFloat newLineSpacing = lineSpacing - (font.lineHeight - font.pointSize);
-        if (newLineSpacing < 0) {
-            newLineSpacing = 0;
-        }
-        [style setLineSpacing:newLineSpacing];
-        
-        NSDictionary *attrs = @{NSFontAttributeName : font, NSParagraphStyleAttributeName : style};
-        CGSize oneSize = [string sizeWithAttributes:attrs];
-        CGSize size = [string boundingRectWithSize:maxSize options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:attrs context:nil].size;
-        NSInteger actualLines = (NSInteger)(size.height / oneSize.height);
-        if (actualLines >= lines) {
-            size = CGSizeMake(ceil(maxSize.width), ceil(lines * oneSize.height));
-        } else {
-            size = CGSizeMake(ceil(maxSize.width), ceil(actualLines * oneSize.height));
-        }
-        return size;
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    CGFloat newLineSpacing = lineSpacing - (font.lineHeight - font.pointSize);
+    if (newLineSpacing < 0) {
+        newLineSpacing = 0;
     }
-    return CGSizeZero;
+    if (paragraphSpacing < 0) {
+        paragraphSpacing = 0;
+    }
+    if (wordSpacing < 0) {
+        wordSpacing = 0;
+    }
+    [style setLineSpacing:newLineSpacing];
+    [style setParagraphSpacing:paragraphSpacing];
+    
+    if (lineBreakMode != NSLineBreakByWordWrapping) {
+        style.lineBreakMode = lineBreakMode;
+    }
+    
+    NSDictionary *attrs = @{NSFontAttributeName: font, NSParagraphStyleAttributeName: style, NSKernAttributeName: @(wordSpacing)};
+    CGSize size = [string boundingRectWithSize:maxSize options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:attrs context:nil].size;
+  
+    return size;
 }
 
 + (CGFloat)qbWidthWithString:(NSString *)string font:(UIFont *)font maxHeight:(CGFloat)maxHeight {
-    return [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(CGFLOAT_MAX, maxHeight) lines:1].width;
+    return [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(CGFLOAT_MAX, maxHeight) mode:NSLineBreakByWordWrapping].width;
 }
 
-+ (NSUInteger)qbCalcLinesOfString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing {
++ (NSInteger)qbCalcLinesOfString:(NSString *)string font:(UIFont *)font width:(CGFloat)width {
     if ([NSString qbIsEmpty:string]) {
         return 0;
     }
-    if (maxWidth <= 0) {
+    if (width <= 0) {
         return 0;
     }
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineSpacing:lineSpacing];
-    NSDictionary *attrs = @{NSFontAttributeName : font, NSParagraphStyleAttributeName : style};
-    CGSize size = [string boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:attrs context:nil].size;
-    NSInteger lines = (NSInteger)(size.height / (font.lineHeight + lineSpacing));
-    return lines;
-}
 
-+ (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing paragraphSpacing:(CGFloat)paragraphSpacing {
-    if ([NSString qbIsEmpty:string]) {
-        return 0;
+    NSInteger sum = 0;
+    // 总行数受换行符影响，所以这里计算总行数，需要用换行符分隔这段文字，然后计算每段文字的行数，相加即是总行数。
+    NSArray * splitText = [string componentsSeparatedByString:@"\n"];
+    for (NSString * sText in splitText) {
+        CGFloat textWidth =[self qbWidthWithString:sText font:font];
+        // size.width/所需要的width 向上取整就是这段文字占的行数
+        NSInteger lines = ceilf(textWidth/width);
+        // 当是0的时候，说明这是换行，需要按一行算。
+        lines = lines == 0?1:lines;
+        sum += lines;
     }
-    if (maxWidth <= 0) {
-        return 0;
-    }
-    
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineSpacing:lineSpacing];
-    [style setParagraphSpacing:paragraphSpacing];
-    
-    NSDictionary *attrs = @{NSFontAttributeName : font, NSParagraphStyleAttributeName : style};
-    CGSize size = [string boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:(NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:attrs context:nil].size;
-    
-    return  ceilf(size.height);
+    return sum;
 }
 
 + (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)width {
-    NSDictionary *attrs = @{NSFontAttributeName :font};
-    CGSize maxSize = CGSizeMake(width, MAXFLOAT);
-    
-    NSStringDrawingOptions options = NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
-    CGSize size = [string boundingRectWithSize:maxSize options:options attributes:attrs context:nil].size;
-    
-    return  ceilf(size.height);
+    return [NSString qbCalcHeightWithString:string font:font maxWidth:width lineSpacing:0 paragraphSpacing:0];
+}
+
++ (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing paragraphSpacing:(CGFloat)paragraphSpacing {
+    return  [NSString qbSizeWithString:string font:font maxSize:CGSizeMake(maxWidth, CGFLOAT_MAX) wordSpacing:0 lineSpacing:lineSpacing paragraphSpacing:paragraphSpacing mode:NSLineBreakByWordWrapping].height;
 }
 
 #pragma mark - Range

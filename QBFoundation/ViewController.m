@@ -41,7 +41,27 @@
     imageView.image = [QBImage(@"test_icon") qbBlurredImage:1];
     
     [self.view addSubview:imageView];
+    
+    NSString *str = @"pron. 你，您，你们（可用于名词前指定谈话对象）\npron. （用于口语和非正式书面语中表示泛指）你，任何人";
+//    str = @"哈哈\n\n";
+//    NSString *str1 = [str qbTrimmingNewlines];
+    CGFloat width = [NSString qbWidthWithString:str font:[UIFont systemFontOfSize:16]];
+    NSInteger lines = [NSString qbCalcLinesOfString:str font:[UIFont systemFontOfSize:16] width:QBDevice.screenWidth - 70];
+    
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.frame = CGRectMake(19, 400, QBDevice.screenWidth - 70, 20);
+    label.font = [UIFont systemFontOfSize:16];
+    label.backgroundColor = UIColor.yellowColor;
+    label.text = str;
+    label.numberOfLines = 0;
+    [label sizeToFit];
+    [self.view addSubview:label];
+    
+    int a;
 }
+
+
 
 
 @end

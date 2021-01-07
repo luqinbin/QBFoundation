@@ -656,70 +656,40 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - CGSize
 /**
- 获取文本的大小 默认最大范围为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) 显示1行
-
+ 获取文本的长度 默认最大范围为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) 显示1行
  @param string 文本
  @param font 字体
- @return CGSize
  */
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font;
-
-/**
- 获取文本的大小 显示1行
-
- @param string 文本
- @param font 字体
- @param maxWidth 最大宽度
- @return CGSize
- */
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth;
-
-/**
- 获取文本的大小 显示1行
-
- @param string 文本
- @param font 字体
- @param maxSize 最大范围 若size为CGSizeZero，则size为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
- @return CGSize
- */
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize;
-
-/**
- 获取文本的大小 默认最大范围为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
-
- @param string 文本
- @param font 字体
- @param lines 行数
- @return CGSize
- */
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font lines:(NSInteger)lines;
++ (CGFloat)qbWidthWithString:(NSString *)string font:(UIFont *)font;
 
 /**
  获取文本的大小
-
  @param string 文本
  @param font 字体
  @param maxSize 最大范围 若size为CGSizeZero，则size为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
- @param lines 行数
+ @param lineBreakMode 换行默认：NSLineBreakByWordWrapping
  @return CGSize
  */
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize lines:(NSInteger)lines;
++ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize mode:(NSLineBreakMode)lineBreakMode;
 
-/**
- 获取文本的大小
-
- @param string 文本
- @param font 字体
- @param maxSize 最大范围 若size为CGSizeZero，则size为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
- @param lines 行数
- @param lineSpacing 行间距
- @return CGSize
- */
-+ (CGSize)qbSizeWithString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize lines:(NSInteger)lines lineSpacing:(CGFloat)lineSpacing;
+/// 获取文本的大小
+/// @param string v
+/// @param font 字体
+/// @param maxSize 最大范围 若size为CGSizeZero，则size为CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+/// @param wordSpacing 字间距
+/// @param lineSpacing 行间距
+/// @param paragraphSpacing 段落间距
+/// @param lineBreakMode 换行默认：NSLineBreakByWordWrapping
++ (CGSize)qbSizeWithString:(NSString *)string
+                      font:(UIFont *)font
+                   maxSize:(CGSize)maxSize
+               wordSpacing:(CGFloat)wordSpacing
+               lineSpacing:(CGFloat)lineSpacing
+          paragraphSpacing:(CGFloat)paragraphSpacing
+                      mode:(NSLineBreakMode)lineBreakMode;
     
 /**
  获取文本的宽度 宽度默认为CGFLOAT_MAX
-
  @param string 文本
  @param font 字体
  @param maxHeight 最大高度
@@ -727,20 +697,23 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (CGFloat)qbWidthWithString:(NSString *)string font:(UIFont *)font maxHeight:(CGFloat)maxHeight;
 
-/**
- 在指定宽度的情况下，计算指定文本占用的行数
-
- @param string 文本
- @param font 字体
- @param maxWidth 最大宽度
- @param lineSpacing 行间距
- @return NSUInteger
- */
-+ (NSUInteger)qbCalcLinesOfString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing;
+/// 在指定宽度的情况下，计算指定文本占用的行数
+/// @param string 文本
+/// @param font 字体
+/// @param width 容器宽度
++ (NSInteger)qbCalcLinesOfString:(NSString *)string font:(UIFont *)font width:(CGFloat)width;
 
 /**
  在指定宽度的情况下，计算指定文本的高度
+ @param string 文本
+ @param font 字体
+ @param width 最大宽度
+ @return 文本的高度
+ */
++ (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)width;
 
+/**
+ 在指定宽度的情况下，计算指定文本的高度
  @param string 文本
  @param font 字体
  @param maxWidth 最大宽度
@@ -749,16 +722,6 @@ NS_ASSUME_NONNULL_BEGIN
  @return NSUInteger
  */
 + (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)maxWidth lineSpacing:(CGFloat)lineSpacing paragraphSpacing:(CGFloat)paragraphSpacing;
-
-/**
- 在指定宽度的情况下，计算指定文本的高度
-
- @param string 文本
- @param font 字体
- @param width 最大宽度
- @return 文本的高度
- */
-+ (CGFloat)qbCalcHeightWithString:(NSString *)string font:(UIFont *)font maxWidth:(CGFloat)width;
 
 #pragma mark - Range
 
