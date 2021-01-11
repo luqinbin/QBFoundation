@@ -1101,9 +1101,8 @@
     }
     
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    CGFloat newLineSpacing = lineSpacing - (font.lineHeight - font.pointSize);
-    if (newLineSpacing < 0) {
-        newLineSpacing = 0;
+    if (lineSpacing < 0) {
+        lineSpacing = 0;
     }
     if (paragraphSpacing < 0) {
         paragraphSpacing = 0;
@@ -1111,7 +1110,7 @@
     if (wordSpacing < 0) {
         wordSpacing = 0;
     }
-    [style setLineSpacing:newLineSpacing];
+    [style setLineSpacing:lineSpacing];
     [style setParagraphSpacing:paragraphSpacing];
     
     if (lineBreakMode != NSLineBreakByWordWrapping) {
