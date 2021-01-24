@@ -56,6 +56,11 @@ FOUNDATION_EXPORT UIColor *_Nullable QBColorHex(NSString *hexStr);
 FOUNDATION_EXPORT UIColor *_Nullable QBAlphaColorHex(NSString *hexStr, CGFloat alpha);
 
 #pragma mark - UIFont//字体
+
+/// 返回指定字体
+/// @param fontName 字体名
+/// @param fontSize 字体大小
+FOUNDATION_EXPORT UIFont *_Nullable QBFont(NSString *fontName, CGFloat fontSize);
 /**
  返回System字体
  
@@ -101,6 +106,8 @@ CG_INLINE void QBDispatch_async_on_main_queue(void (^block)(void)) {
     }
 }
 
+
+/// 使用时应谨慎！可能导致死锁，因为无法保证 main queue 此时没有在等待当前 queue
 CG_INLINE void QBDispatch_sync_on_main_queue(void (^block)(void)) {
     if (pthread_main_np()) {
         if (block) {

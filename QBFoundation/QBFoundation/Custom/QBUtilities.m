@@ -66,6 +66,10 @@ UIColor *_Nullable QBAlphaColorHex(NSString *hexStr, CGFloat alpha) {
 }
 
 #pragma mark - UIFont
+UIFont *_Nullable QBFont(NSString *fontName, CGFloat fontSize) {
+    return [UIFont fontWithName:fontName size:fontSize];
+}
+
 UIFont *_Nullable QBSystemFont(CGFloat fontSize) {
     return [UIFont systemFontOfSize:fontSize];
 }
