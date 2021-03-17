@@ -423,15 +423,9 @@
 
 #pragma mark - Move
 - (NSArray *)qbMoveObjectAtIndex:(NSInteger)index toIndex:(NSInteger)toIndex {
-    if (toIndex >= self.count - 1 || index >= self.count - 1) {
-        return self;
-    }
-    
-    id originObj = self[index];
     NSMutableArray *mutableArray = [self mutableCopy];
-    [mutableArray removeObjectAtIndex:index];
-    [mutableArray insertObject:originObj atIndex:toIndex];
-    return [NSArray arrayWithArray:mutableArray];
+    [mutableArray exchangeObjectAtIndex:index withObjectAtIndex:toIndex];
+    return [mutableArray copy];
 }
 
 #pragma mark - Object
@@ -756,13 +750,7 @@
 
 #pragma mark - Move
 - (void)qbMoveObjectAtIndex:(NSInteger)index toIndex:(NSInteger)toIndex {
-    if (toIndex >= self.count - 1 || index >= self.count - 1) {
-        return;
-    }
-    
-    id originObj = self[index];
-    [self removeObjectAtIndex:index];
-    [self insertObject:originObj atIndex:toIndex];
+    [self exchangeObjectAtIndex:index withObjectAtIndex:toIndex];
 }
 
 //http://www.cocoabuilder.com/archive/cocoa/189484-nsarray-move-items-at-indexes.html
