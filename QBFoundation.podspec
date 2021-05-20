@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'QBFoundation'
-  s.version          = '0.3.5'
+  s.version          = '0.3.6'
   s.summary          = 'iOS基础库'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/luqinbin/QBFoundation.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'QBFoundation/QBFoundation/**/*'
   
